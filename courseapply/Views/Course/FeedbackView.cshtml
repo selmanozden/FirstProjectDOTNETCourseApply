@@ -1,0 +1,17 @@
+﻿@model VariableModel
+<form asp-action="FeedbackView">
+<div>
+    <h3 class="display-4">TEBRİKLER @Model.adi @Model.soyadi </h3>
+
+    <hr />
+    <blockquote class="blockquote">
+        katılmış olduğunuz kurs: @Model.kursSecimi
+    </blockquote>
+    <p class="text-muted">katıldığınız tarih @Model.kayitOlduguTarih.</p>
+    <div class="btn-group">
+        <a class="btn btn-outline-success" asp-controller="Course" asp-action="ApplicationView">Applications</a>
+        <a class="btn btn-success" asp-action="Index" asp-controller="Home">Home</a>
+    </div>
+</div>
+</form>
+

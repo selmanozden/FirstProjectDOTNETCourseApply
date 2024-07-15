@@ -1,0 +1,48 @@
+﻿@model IEnumerable<courseapply.Models.VariableModel>
+@if (Model.Count() > 0)
+{
+    <h6 class="display-6">
+        Kayıt Olanlar Listesi(@Model.Count())
+    </h6>
+
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Ad Soyad</th>
+                <th>Kayıt Olunan Tarih</th>
+                <th>Kurs</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (VariableModel candidate in Model)
+            {
+                <tr>
+                    <td>@candidate.email</td>
+                    <td>@candidate.adi @candidate.soyadi</td>
+                    <td>@candidate.kayitOlduguTarih</td>
+                    <td>@candidate.kursSecimi</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@candidate.Id" class="btn btn-primary">Edit</a>
+                    </td>
+                    <td>
+                        <form method="post" asp-action="DeleteRecord">
+                            <input type="hidden" name="id" value="@candidate.Id" />
+                            <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info">
+        Kimse Kaydolmadı
+        <a class="alert-link" asp-action="CourseApplyView">
+            Kaydol
+        </a>
+    </div>
+
+}

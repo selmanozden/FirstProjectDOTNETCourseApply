@@ -1,0 +1,32 @@
+﻿@model VariableModel
+
+<h1>Düzenleme Ekranı</h1>
+
+<form method="post" >
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="email">E-mail</label>
+        <input asp-for="email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="adi">Adı</label>
+        <input asp-for="adi" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="soyadi">Soyadı</label>
+        <input asp-for="soyadi" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="yasi">Yaş</label>
+        <input asp-for="yasi" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="kursSecimi">Kurs Seçimi</label>
+        <input asp-for="kursSecimi" class="form-control" />
+    </div>
+    <div class="box">
+    <button type="submit" class="btn btn-primary" >Kaydet</button>
+    </div>
+</form>
+
